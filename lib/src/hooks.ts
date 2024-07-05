@@ -6,10 +6,13 @@ import { convertMsToS, filterLabels } from './helpers';
 import { ContextTypes, FieldTypes, MetricsNames, Metrics, MetricTypes } from './metrics';
 
 export function getLabelsFromContext(context: any): LabelValues<string> {
-  return {
+  const labels: any = {
     operationName: context?.request?.operationName,
     operation: context?.operation?.operation
   };
+  const accountid = context?.request?.http?.headers?.get('accountid');
+  if (labels) labels.accountid = accountid;
+  return labels;
 }
 
 export function countFieldAncestors(path: Path | undefined): string {
