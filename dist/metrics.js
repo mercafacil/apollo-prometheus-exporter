@@ -26,7 +26,7 @@ var MetricTypes;
 })(MetricTypes = exports.MetricTypes || (exports.MetricTypes = {}));
 exports.serverLabelNames = ['version'];
 exports.queryLabelNames = ['operationName', 'operation', 'accountid'];
-exports.fieldLabelNames = ['operationName', 'operation', 'fieldName', 'parentType', 'returnType', 'pathLength'];
+exports.fieldLabelNames = ['operationName', 'operation', 'accountid', 'fieldName', 'parentType', 'returnType', 'pathLength'];
 exports.metricsConfig = [
     {
         name: MetricsNames.SERVER_STARTING,

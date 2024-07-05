@@ -97,7 +97,15 @@ export const serverLabelNames = ['version'];
 
 export const queryLabelNames = ['operationName', 'operation', 'accountid'];
 
-export const fieldLabelNames = ['operationName', 'operation', 'fieldName', 'parentType', 'returnType', 'pathLength'];
+export const fieldLabelNames = [
+  'operationName',
+  'operation',
+  'accountid',
+  'fieldName',
+  'parentType',
+  'returnType',
+  'pathLength'
+];
 
 export const metricsConfig: MetricConfig[] = [
   {
