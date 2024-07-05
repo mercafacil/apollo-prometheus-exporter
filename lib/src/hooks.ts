@@ -11,6 +11,8 @@ export function getLabelsFromContext(context: any): LabelValues<string> {
     operation: context?.operation?.operation
   };
   const accountid = context?.request?.http?.headers?.get('accountid');
+  console.log('context?.request?.http?.headers', context?.request?.http?.headers);
+  console.log('accountid', accountid);
   if (labels) labels.accountid = accountid;
   return labels;
 }
