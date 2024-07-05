@@ -10,9 +10,11 @@ export function getLabelsFromContext(context: any): LabelValues<string> {
     operationName: context?.request?.operationName,
     operation: context?.operation?.operation
   };
-  if (['AppSales__venom__0', 'AppSalesHome__venom__0'].includes(labels.operationName)) {
-    const accountid = context?.request?.http?.headers?.get('accountid');
-    if (labels) labels.accountid = accountid;
+  if (['AppSales', 'AppSalesHome', 'AppSales__venom__0', 'AppSalesHome__venom__0'].includes(labels.operationName)) {
+    const label = 'accountid';
+    const fromHeader = context?.request?.http?.headers?.get(label);
+    const fromContext = context?.contextValue?.[label]?.toString() || context?.contextValue?.['accountId']?.toString();
+    if (labels) labels.accountid = fromHeader || fromContext;
   }
   return labels;
 }
