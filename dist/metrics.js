@@ -25,7 +25,7 @@ var MetricTypes;
     MetricTypes[MetricTypes["HISTOGRAM"] = 2] = "HISTOGRAM";
 })(MetricTypes = exports.MetricTypes || (exports.MetricTypes = {}));
 exports.serverLabelNames = ['version'];
-exports.queryLabelNames = ['operationName', 'operation'];
+exports.queryLabelNames = ['operationName', 'operation', 'accountid'];
 exports.fieldLabelNames = ['operationName', 'operation', 'fieldName', 'parentType', 'returnType', 'pathLength'];
 exports.metricsConfig = [
     {

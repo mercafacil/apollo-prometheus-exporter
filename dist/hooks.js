@@ -4,12 +4,14 @@ exports.generateHooks = exports.getLabelsFromFieldResolver = exports.getApolloSe
 const helpers_1 = require("./helpers");
 const metrics_1 = require("./metrics");
 function getLabelsFromContext(context) {
-    var _a, _b, _c, _d, _e;
+    var _a, _b, _c, _d, _e, _f, _g;
     const labels = {
         operationName: (_a = context === null || context === void 0 ? void 0 : context.request) === null || _a === void 0 ? void 0 : _a.operationName,
-        operation: (_b = context === null || context === void 0 ? void 0 : context.operation) === null || _b === void 0 ? void 0 : _b.operation,
+        operation: (_b = context === null || context === void 0 ? void 0 : context.operation) === null || _b === void 0 ? void 0 : _b.operation
     };
     const accountid = (_e = (_d = (_c = context === null || context === void 0 ? void 0 : context.request) === null || _c === void 0 ? void 0 : _c.http) === null || _d === void 0 ? void 0 : _d.headers) === null || _e === void 0 ? void 0 : _e.get('accountid');
+    console.log('context?.request?.http?.headers', (_g = (_f = context === null || context === void 0 ? void 0 : context.request) === null || _f === void 0 ? void 0 : _f.http) === null || _g === void 0 ? void 0 : _g.headers);
+    console.log('accountid', accountid);
     if (labels)
         labels.accountid = accountid;
     return labels;
